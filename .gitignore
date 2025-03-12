@@ -1,3 +1,8 @@
+# Environment variables
+.env
+.env.*
+!.env.template
+
 # Python
 __pycache__/
 *.py[cod]
@@ -24,6 +29,7 @@ wheels/
 venv/
 ENV/
 env/
+.env/
 
 # IDE
 .idea/
@@ -32,27 +38,26 @@ env/
 *.swo
 
 # Logs
-logs/
 *.log
 
-# Unit test / coverage reports
+# Local config
+config/config.yaml
+
+# Coverage
+.coverage
+coverage.xml
 htmlcov/
+
+# Docker
+.docker/
+
+# Unit test / coverage reports
 .tox/
 .nox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
 *.cover
 *.py,cover
 .hypothesis/
 .pytest_cache/
-
-# Environment variables and configuration
-.env
-config/config.yaml
-*.env
 
 # OS generated files
 .DS_Store

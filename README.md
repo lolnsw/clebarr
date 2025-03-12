@@ -48,6 +48,8 @@ Note: Never commit your actual Plex token, `.env` file, or `config/config.yaml` 
 
 ## Development
 
+### Local Development
+
 1. Create a virtual environment:
 ```bash
 python -m venv venv
@@ -64,6 +66,28 @@ pip install -r requirements.txt
 uvicorn app.main:app --reload
 ```
 
+### Docker Development
+
+1. Build and run with Docker Compose:
+```bash
+docker compose up --build
+```
+
+The application will be available at http://localhost:8000.
+
+### Production Deployment
+
+The application is available as a Docker image supporting both AMD64 and ARM64 architectures:
+
+```bash
+docker pull your-username/clebarr:latest
+docker run -d \
+  -p 8000:8000 \
+  -e PLEX_TOKEN="your-token" \
+  -e PLEX_SERVER_URL="http://your-server:32400" \
+  your-username/clebarr:latest
+```
+
 ## Testing
 
 Run tests with:
@@ -72,6 +96,18 @@ python -m pytest tests/
 ```
 
 The test suite uses a separate configuration file at `tests/config/config.yaml`.
+
+## CI/CD
+
+The project uses GitHub Actions for:
+- Running tests and code coverage
+- Building multi-architecture Docker images
+- Automated deployments on releases
+
+The workflow is triggered on:
+- Push to main branch
+- Pull requests
+- Release publications
 
 ## API Documentation
 
