@@ -1,0 +1,11 @@
+# Plex Authentication
+PLEX_TOKEN=""  # Your Plex authentication token
+
+# Server Configuration (optional, can also be set in config.yaml)
+PLEX_SERVER_URL=""  # e.g., http://localhost:32400
+
+# Environment
+ENV="development"  # development, production, testing
+
+# Logging (optional, can also be set in config.yaml)
+LOG_LEVEL="INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL 

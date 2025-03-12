@@ -1,0 +1,23 @@
+# Plex configuration
+plex:
+  # Server configuration
+  server:
+    base_url: "http://localhost:32400"  # Replace with your Plex server URL
+    # token: Optional, recommended to set via PLEX_TOKEN environment variable
+  
+  # Client application configuration
+  client:
+    identifier: "com.clebarr"
+    product: "Clebarr"
+    version: "1.0.0"
+    device: "Python Script"
+    device_name: "Clebarr"
+
+# Logging configuration
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR, CRITICAL
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  date_format: "%Y-%m-%d %H:%M:%S"
+  file_path: "logs/app.log"
+  max_bytes: 10485760  # Maximum size of log file before rotation (10MB)
+  backup_count: 5  # Number of backup log files to keep when rotating 

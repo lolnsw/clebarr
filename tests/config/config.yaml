@@ -1,0 +1,19 @@
+# Test configuration for Clebarr
+plex:
+  server:
+    base_url: "http://test-server:32400"
+    token: "test-token"
+  client:
+    identifier: "com.clebarr.test"
+    product: "Clebarr Test"
+    version: "1.0.0"
+    device: "Test Device"
+    device_name: "Clebarr Test Device"
+
+logging:
+  level: "DEBUG"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  date_format: "%Y-%m-%d %H:%M:%S"
+  file_path: "logs/test.log"
+  max_bytes: 10485760
+  backup_count: 5 
