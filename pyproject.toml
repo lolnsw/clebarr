@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "clebarr"
+version = "0.1.0"
+description = "Plex Media Server management application"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+pythonpath = [
+    "."
+]
+testpaths = [
+    "tests"
+]
+python_files = ["test_*.py"]
+addopts = [
+    "--import-mode=importlib",
+] 
