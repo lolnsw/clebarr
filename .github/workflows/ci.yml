@@ -29,6 +29,13 @@ jobs:
           pip install pytest pytest-cov
           pip install -e .
           
+      - name: Set up test environment
+        run: |
+          mkdir -p tests
+          if [ ! -f "tests/config.yaml" ]; then
+            cp config/config.template.yaml tests/config.yaml
+          fi
+          
       - name: Run tests with coverage
         run: |
           pytest --cov=app --cov-report=xml

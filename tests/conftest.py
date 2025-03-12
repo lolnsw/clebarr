@@ -1,10 +1,10 @@
 import os
-from pathlib import Path
 import pytest
 from fastapi.testclient import TestClient
 
-# Import app after setting test config path
-os.environ["PLEX_MANAGER_CONFIG"] = str(Path(__file__).parent / "config/config.yaml")
+# Set test config path before importing app
+os.environ["CONFIG_PATH"] = "tests/config.yaml"
+
 from app.main import app
 
 @pytest.fixture
