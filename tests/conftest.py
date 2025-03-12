@@ -3,7 +3,7 @@ import pytest
 from fastapi.testclient import TestClient
 
 # Set test config path before importing app
-os.environ["CONFIG_PATH"] = "tests/config.yaml"
+os.environ["CONFIG_PATH"] = os.path.join(os.path.dirname(__file__), "config.yaml")
 
 from app.main import app
 

@@ -31,10 +31,24 @@ jobs:
           
       - name: Set up test environment
         run: |
-          mkdir -p tests
-          if [ ! -f "tests/config.yaml" ]; then
-            cp config/config.template.yaml tests/config.yaml
-          fi
+          # Create necessary directories
+          mkdir -p config tests
+          
+          # Copy template config to both locations
+          cp config/config.template.yaml config/config.yaml
+          cp config/config.template.yaml tests/config.yaml
+          
+          # Update test config with mock values
+          cat > tests/config.yaml << EOL
+          plex:
+            username: test_user
+            password: test_password
+            server_url: http://localhost:32400
+            token: test_token
+
+          logging:
+            level: DEBUG
+          EOL
           
       - name: Run tests with coverage
         run: |
